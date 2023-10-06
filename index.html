@@ -1,0 +1,165 @@
+<html>
+<head>
+<!----------------------------------------------------------------------------------------->
+<style>
+body {
+	background-color: rgb(20,21,25);
+	
+
+}
+
+.box1 {
+	background-image: linear-gradient(rgba(32,40,50,1),rgba(23,30,40,1));
+	position:absolute;
+	display:inline;
+	top:200px;
+	left:30%;
+	width:450px;
+	height:450px;
+	border-radius:10%;
+}
+
+button.circle {
+	border:none;
+	border-radius:500%;
+	height:53px;
+	width:53px;
+	margin-top:35px;
+	margin-left:25px;
+	background-color: rgba(255,255,255,0.05);
+	display:inline;
+	color: rgba(255,255,255,0.6);
+	font-size:17px;
+}
+
+button.circle:hover {
+	background-color: rgba(255,255,255,0.3);
+
+}
+
+button.circle:active {
+	background-color:rgb(252,118,19);
+	color:white;
+}
+
+.ques {
+	font-family:Overpass;
+	color:white;
+	font-size:30px;
+	margin-left:35px;
+}
+
+
+.desc {
+	font-family:Overpass;
+	color:white;
+	font-size:18px;
+	margin-left:35px;
+	width:80%;
+	margin-bottom:0px;
+}
+
+.submit {
+	position:relative;
+	display:inline-block;
+	align-items:center;
+	border-radius:40px;
+	border:none;
+	margin-top:5%;
+	height:50px;
+	width:86%;
+	left:5%;
+	background-color:rgb(252,118,19);
+	text-align:center;
+}
+
+.center {
+	font-size:23px;
+	color:white;
+	font-family:arial;
+	font-weight:12px;
+}
+
+
+
+</style>
+<!---------------------------------------------------------------------------------------------->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+
+const buttons = document.getElementsByClassName("circle");
+
+for (let i = 0; i < buttons.length; i++) {
+	buttons[i].addEventListener("click",function() { f1(this.id); });
+}
+
+
+
+
+function f1(id) {
+	console.log("Button clicked:", id);
+	for (let i = 0; i < buttons.length; i++) {
+		buttons[i].style.backgroundColor = "rgba(255,255,255,0.05)";
+		/* buttons[i].disabled = true;	*/
+	} 
+	document.getElementById(id).style.backgroundColor = "rgb(252,118,19)";
+	document.getElementById(id).style.color = "white";
+	/*	document.getElementById(id).disabled = false; */
+
+}
+
+});
+</script>
+<!-------------------------------------------------------------------------------------------->
+</head>
+<body>
+
+<div class="box1">
+<button type="button" class="circle">
+<img src="icon-star.svg" style=" height:20px;">
+</button>
+
+<p class="ques">
+	How did we do ?
+</p>
+
+<p class="desc">
+	Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering.
+
+</p>
+
+
+<button type="button" class="circle" id="one" >
+ 1
+</button>
+
+<button type="button" class="circle" id="two" >
+ 2
+</button>
+
+<button type="button" class="circle" id="three" >
+ 3
+</button>
+
+<button type="button" class="circle" id="four">
+ 4
+</button>
+
+<button type="button" class="circle" id="five" >
+ 5
+</button>
+
+
+<button type="button" class="submit">
+
+<center class="center">
+Submit
+</center>
+
+</button>
+
+</div>
+
+</body>
+</html>

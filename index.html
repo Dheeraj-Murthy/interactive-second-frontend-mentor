@@ -106,8 +106,15 @@ function f1(id) {
 	document.getElementById(id).style.backgroundColor = "rgb(252,118,19)";
 	document.getElementById(id).style.color = "white";
 	/*	document.getElementById(id).disabled = false; */
-
+	sessionStorage.setItem("rating",id);
 }
+
+document.getElementById("submit").addEventListener("click", function() { f2(); } );
+
+function f2() {
+	location.replace("index2.html")
+}
+
 
 });
 </script>
@@ -151,7 +158,7 @@ function f1(id) {
 </button>
 
 
-<button type="button" class="submit">
+<button type="button" class="submit" id="submit">
 
 <center class="center">
 Submit
